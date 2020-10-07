@@ -1,5 +1,5 @@
 
- ///////////////////////// its all about how change text idk how 
+ ///////////////////////// how to change text value 
 var page = $("#name").val()
 console.log(page)
 //////////////////////////
@@ -10,25 +10,51 @@ console.log( $("#test").val())
 console.log($("#gamer").text())
 
 
-//$("#X").click(function(){
-	
-	//console.log($("#X").val())
-//})
 
-//$("#O").click(function(){
-    
-	//console.log($("#O").val())
-//})
+////////////////////////////////////how to start 
 
-//var O = $("#O").val()
-//var X = $("#X").val()
+/*when you press the block it will give it an id and save it 
+if block alredy have id thats mean dont fill it again 
+else fill it with X or O value*/
 
-//var array=[1,2,3,4]
-// this function will detect wich td you clicked and give it a value of X or O 
-// still need to know how to know the id of td you clicked i found it already but cant use it 
-// use this 
-$(document).ready(function(){
+//first step the player will chose to use x or o  
+
+//we will have tow player functions one for player 
+// the other one is for random computer 
+
+// final step check for block in row 
+//if the id fill in three blocks in row the player wins
+
+
+// its all about sunctions 
+
+
+// lets start how to giv an id for td block once its clicked
+$("#X").click(function(){
 	$("td").click(function(){
-	$(this).html(text());
-   });
+	$(this).html("X")
+	$(this).attr("id", "1")
+	var saved = $(this).map(function(){
+		return $(this).text()
+
+	})
+   }); // if player pchose X computer will chose o with random blocks 
+
+ 
 });
+
+$("#O").click(function(){
+	$("td").click(function(){
+	$(this).html("O")
+	var saved = $(this).map(function(){
+		return $(this).text()
+
+	})	
+   });// if player pchose X computer will chose o with random blocks 
+});
+
+//$("#X").click(function(){
+	//for(var i =0; i<array.length; i++){
+		//if()
+	//}
+//})
