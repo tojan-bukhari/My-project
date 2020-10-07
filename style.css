@@ -39,3 +39,14 @@ h4{
 #test{
 	color:green;
 }
+table {
+	background:white;
+	border: 5px solid black;
+	border-collapse: collapse;
+	width:20%
+
+}
+td , tr {
+	border: solid black;
+	 padding: 50px;
+}
