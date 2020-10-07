@@ -1,0 +1,3 @@
+
+
+$("#gamer").text("Hello")

@@ -1,0 +1,41 @@
+
+
+
+
+body {
+	background-image:url(https://cache.desktopnexus.com/cropped-wallpapers/554/554834-1280x960-[DesktopNexus.com].jpg?st=yInus3DH5tdEAwQJ-ekCQQ&e=1601999140);
+}
+
+#header{
+	color:white;
+	text-align:center;
+	font-size:600%;
+}
+
+#h2{
+   color: #FAFD45;
+   text-align:center;
+
+}
+h3{
+	color:red;
+	text-align:center;
+}
+h4{
+	color:red;
+	text-align:center;
+}
+#fdiv {
+  color:black;
+  width: 250px;
+  border: 3px;
+  padding: 30px;
+  background: linear-gradient(to left, yellow, red);
+  margin: auto;
+}
+#gamer{
+	color:white;
+}
+#test{
+	color:green;
+}
