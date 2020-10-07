@@ -1,9 +1,8 @@
 
  ///////////////////////// how to change text value 
-var page = $("#name").val()
-console.log(page)
+var mame = $("#name").val()
 //////////////////////////
- $("#gamer").html( "Hello"+ page ) ;
+ $("h2").text( "Hello"+ mame ) ;
 
 console.log( $("#test").val())
 
@@ -30,31 +29,43 @@ else fill it with X or O value*/
 
 
 // lets start how to giv an id for td block once its clicked
-$("#X").click(function(){
-	$("td").click(function(){
+var n = 0
+	
+	$("#X").click(function(){
+	$("td").click(function(n){
 	$(this).html("X")
-	$(this).attr("id", "1")
-	var saved = $(this).map(function(){
-		return $(this).text()
+	$(this).attr("id", "n++")
 
 	})
    }); // if player pchose X computer will chose o with random blocks 
 
  
-});
 
 $("#O").click(function(){
-	$("td").click(function(){
+	$("td").click(function(n){
 	$(this).html("O")
-	var saved = $(this).map(function(){
-		return $(this).text()
+	$(this).attr("id", "n++")
+	})
+ });// if player pchose X computer will chose o with random blocks 
 
-	})	
-   });// if player pchose X computer will chose o with random blocks 
-});
+var arrayId =["#1","#2","#3","#4","#5","#6","#7","#8","#9"]//indexes 8
+$("#X").click(function(){
+	for(var i = 0; i< array.length; i++){
+		var random = Math.floor(Math.random*9)
+		function td(event){
+		var $ arrayId [$(random)]= $ event(target)
+		return $ arrayId [$(random)].html("O")	
+		}
+		
 
-//$("#X").click(function(){
-	//for(var i =0; i<array.length; i++){
-		//if()
-	//}
-//})
+	}
+
+
+}
+
+
+// this function to detect if the td clicked or not 
+ //function td(event){
+	//var element = event.target
+	//return (element.html("O"))
+//});
