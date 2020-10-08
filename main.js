@@ -1,71 +1,80 @@
 
  ///////////////////////// how to change text value 
-var mame = $("#name").val()
-//////////////////////////
- $("h2").text( "Hello"+ mame ) ;
-
-console.log( $("#test").val())
-
-console.log($("#gamer").text())
-
-
 
 ////////////////////////////////////how to start 
 
-/*when you press the block it will give it an id and save it 
-if block alredy have id thats mean dont fill it again 
-else fill it with X or O value*/
+// nine blocks 
+// Function 1 is to give text & id for the clicked td 
+// even clicks is for X and odd for O 
+//if we got three blocks in row with the same text the player wins 
+// we need to count for x's and o's
+// clear game 
 
-//first step the player will chose to use x or o  
-
-//we will have tow player functions one for player 
-// the other one is for random computer 
-
-// final step check for block in row 
-//if the id fill in three blocks in row the player wins
-
-
-// its all about sunctions 
-
-
-// lets start how to giv an id for td block once its clicked
-var n = 0
-	
-	$("#X").click(function(){
-	$("td").click(function(n){
-	$(this).html("X")
-	$(this).attr("id", "n++")
-
-	})
-   }); // if player pchose X computer will chose o with random blocks 
-
- 
-
-$("#O").click(function(){
-	$("td").click(function(n){
-	$(this).html("O")
-	$(this).attr("id", "n++")
-	})
- });// if player pchose X computer will chose o with random blocks 
-
-var arrayId =["#1","#2","#3","#4","#5","#6","#7","#8","#9"]//indexes 8
-$("#X").click(function(){
-	for(var i = 0; i< array.length; i++){
-		var random = Math.floor(Math.random*9)
-		function td(event){
-		var $ arrayId [$(random)]= $ event(target)
-		return $ arrayId [$(random)].html("O")	
-		}
-		
-
+var sumX=0
+var sumO=0
+var clicks=0
+$("td").click(function(){
+	if($(this).text() === "X" || $(this).text() === "O" ){
+		alert("you already fill it")
 	}
+	if(clicks%2===0){
+		clicks++
+	   sumX = sumX + 1
+	    $(this).html("X")
+	}else{
+		clicks++
+		sumO = sumO + 1
+		$(this).html("O")
+	}
+	
 
+	console.log(sumX,sumO)
+		if($("#1").text()==="X" && $("#2").text()==="X" && $("#3").text()==="X"){
+		 alert ( "X plyer wins")
+	}else if ($("#1").text() === "X" && $("#4").text() === "X" && $("#7").text() ==="X"){
+		alert ( "X plyer wins")
+	}else if($("#1").text() === "X" && $("#5").text() === "X" && $("#9").text() === "X"){
+		alert ( "X plyer wins")
+	}else if($("#2").text() === "X" &&  $("#5").text()=== "X" && $("#8").text() === "X"){
+		alert ( "X plyer wins")
+	}else if($("#3").text() === "X" && $("#5").text() === "X" && $("#7").text() === "X"){
+		alert ( "X plyer wins")
+	}else if($("#3").text() === "X" && $("#6").text() === "X" && $("#9").text() === "X"){
+		alert ( "X plyer wins")
+	}else if($("#4").text() === "X" && $("#5").text() === "X" && $("#6").text() === "X" ){
+		alert ( "X plyer wins")
+	}else if($("#7").text() === "X" && $("#8").text() === "X" && $("#9").text() === "X"){
+		alert ( "X plyer wins")
+	}else if($("#1").text() === "O" && $("#2").text() === "O" && $("#3").text() === "O"){
+		alert ( "O plyer wins")
+	}else if ($("#1").text() === "O" && $("#4").text() === "O" && $("#7").text() ==="O"){
+		alert ( "O plyer wins")
+	}else if($("#1").text() === "O" && $("#5").text() === "O" && $("#9").text() === "O"){
+		alert ( "O plyer wins")
+	}else if($("#2").text() === "O" &&  $("#5").text()=== "O" && $("#8").text() === "O"){
+		alert ( "O plyer wins")
+	}else if($("#3").text() === "O" && $("#5").text() === "O" && $("#7").text() === "O"){
+		alert ( "O plyer wins")
+	}else if($("#3").text() === "O" && $("#6").text() === "O" && $("#9").text() === "O"){
+		alert ( "O plyer wins")
+	}else if($("#4").text() === "O" && $("#5").text() === "O" && $("#6").text() === "O" ){
+		alert ( "O plyer wins")
+	}else if($("#7").text() === "O" && $("#8").text() === "O" && $("#9").text() === "O"){
+		alert ( "O plyer wins")
+	}else if (sumX > 7 || sumO > 7 ){
+		alert("nobody wins")}
 
-}
+    $("#h2").html("Multiplayer Game" + " " + sumX + " /"+ sumO)
+	
+	})
+	
+	
 
+// 24 line and wondarring why its not working  
 
-// this function to detect if the td clicked or not 
- //function td(event){
-	//var element = event.target
-	//return (element.html("O"))
-//});
+$("#reset").click(function(){
+	$("td").html(" ")
+	sumX=0
+	sumO=0
+})
+
